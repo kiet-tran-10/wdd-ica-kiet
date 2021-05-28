@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 22px;
+    line-height: 1.2;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Caveat', cursive;
+    background-image: url("media/linedpaper.png");
+    z-index: -50000;
+    color: #003866;
+}
+
+section{
+    position: relative;
+    width: 72.5%;
+    margin: 2% auto;
+    padding: 0;
+    clear: both;
+}
+
+h2{
+    padding-top: 7%;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3%;
+}
+
+h3{
+    color: #f16a6f;
+    font-size: 1.5rem;
+}
+
+/* Menu */
+.menu input[type="checkbox"]{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 100000;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.icon{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 10001;
+    background: #aafdbc;
+    pointer-events: none;
+    border-radius: 30px;
+}
+
+.icon:before{
+    font-size: 0.6rem;
+    content: "close";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    color: #f16a6f;
+    text-align: center;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.menu input[type="checkbox"]:checked ~ .icon:before{
+    content: "menu";
+}
+
+.menu ul{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    width: 225px;
+    height: 100vh;
+    transition: 0.5s;
+    z-index: 100000;
+    overflow-y: auto;
+    border-right: 5px solid #f16a6f;
+}
+
+.menu input[type="checkbox"]:checked ~ ul{
+    left: -300px;
+}
+
+.menu ul img{
+    position: relative;
+    z-index: -2;
+    opacity: .7;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.menu ul li{
+    list-style: none;
+}
+
+.menu ul li a{
+    display: block;
+    color: #003866;
+    padding: 10px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 900;
+    transition: 0.5s;
+    line-height: 1.1;
+}
+
+.menu ul li a:hover{
+    transform: translateX(10px);
+    color: #f16a6f;
+}
+
+/* Header */
+header{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    padding-top: 12%;
+}
+
+header .container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    transform-style: preserve-3d;
+}
+
+header .container .box{
+    position: relative;
+}
+
+/* About Šarka */
+#about-me{
+    text-align: center;
+}
+
+.sarka{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.left{
+    width: 45%;
+    margin-right: 5%;
+}
+
+.sarka img{
+    width: 80%;
+    margin-top: 1.5%;
+    height: 550px;
+    border: 8px solid #aafdbc;
+    border-radius: 500px;
+    transition: 1s;
+}
+
+.sarka img:hover{
+    transform: scale(1.1);
+    border-color: #f16a6f;
+}
+
+.sarka p{
+    width: 45%;
+    margin-right: 5%;
+    line-height: 1.1;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+#about-me a{
+    text-decoration: none;
+    color: #f16a6f;
+}
+
+
+/* Diary CSS */
+.diary-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.diary-box p{
+    font-size: 1.1rem;
+}
+
+.diary-box img{
+    width: 100%;
+    border: 8px solid #aafdbc;
+    border-radius: 50px;
+    transition: 0.8s;
+}
+
+.diary-box img:hover{
+    border-color: #f16a6f;
+}
+
+.chapter{
+    font-size: 1.2rem;
+    padding: 1.5% 0;
+    border-top: 2px solid #f16a6f;
+    border-bottom: 2px solid #f16a6f;
+}
+
+.left-box{
+    width: 45%;
+    margin-top: 2.5%;
+    margin-right: 2.5%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+
+.left-box img:hover{
+    transform: rotate(-15deg);
+}
+
+.right-box{
+    width: 45%;
+    margin-top: 2.5%;
+    position: relative;
+    margin-left: 2.5%;
+    transition: 1s;
+}
+
+.right-box img:hover{
+    transform: rotate(15deg);
+}
+
+/* Footer */
+footer{
+    width: 100%;
+    margin-top: 7.5%;
+    border-top: 5px solid #f16a6f;
+    text-align: center;
+}
+
+footer p{
+    margin: 1.5% auto;
+}
+
+/* Responsive */ 
+@media(max-width: 500px){
+    .menu ul{
+        width: 100%;
+        background-image: url("media/linedpaper.png");
+        z-index: 10000;
+    }
+
+    .menu input[type="checkbox"]:checked ~ ul{
+        left: -500px;
+    }
+
+    .icon{
+        z-index: 10001;
+    }
+
+    header{
+        padding-top: 50%;
+    }
+
+    .sarka{
+        flex-direction: column;
+    }
+
+    .left{
+        width: 100%;
+    }
+
+    .sarka img{
+        width: 100%;
+    }
+
+    .sarka p{
+        padding-top: 7.5%;
+        width: 100%;
+    }
+
+    .diary-box{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .chapter{
+        order: 1;
+    }
+
+    .left-box{
+        width: 100%;
+        margin-top: 5%;
+        margin-right: 0;
+    }
+
+    .right-box{
+        width: 100%;
+        margin-top: 5%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1000px){
+    .menu ul{
+        background-image: url("media/linedpaper.png");
+    }
+
+    header{
+        padding-top: 30%;
+    }
+
+    .sarka img{
+        width: 100%;
+    }
+}
+
+@media (max-width: 1500px){
+    header{
+        padding-top: 17%;
+    }
+
+    section{
+        width: 65%;
+    }
+}
